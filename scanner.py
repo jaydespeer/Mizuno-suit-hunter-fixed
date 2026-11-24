@@ -223,19 +223,18 @@ def run_scanner():
             try:
                 page.goto(source["url"], wait_until="domcontentloaded", timeout=30000)
                 
-                # Mimic human actions to bypass WAF / bot-protection walls
-                page.wait_for_timeout(3000)
-                page.mouse.wheel(0, 500)
+                # Human simulation pause & scroll to ensure JS loads cards
+                page.wait_for_timeout(4000)
+                page.mouse.wheel(0, 600)
                 page.wait_for_timeout(2000)
-
-                try:
-                    page.wait_for_selector(".itemCard, .searchItemBox, li[data-item-id], .g-thumbnail", timeout=10000)
-                except Exception:
-                    pass
 
                 html = page.content()
                 soup = BeautifulSoup(html, "html.parser")
-                items = soup.select(".itemCard, .searchItemBox, li[data-item-id], .g-thumbnail")
+                
+                # Robust multi-fallback selector to capture listings across Buyee layouts
+                items = soup.select("li[data-item-id], [class*='itemCard'], [class*='searchItem'], [class*='Card'], div.g-thumbnail")
+                if not items:
+                    items = soup.select("a[href*='/item/'], a[href*='/mercari/'], a[href*='/yahoo/'], a[href*='/rakuma/']")
 
                 if not items:
                     report["errors"].append(f"{source['name']}: Loaded page, but 0 item cards matched (Title: {page.title()})")
@@ -244,26 +243,30 @@ def run_scanner():
                 for item in items[:25]:
                     report["listings_inspected"] += 1
 
-                    title_elem = item.select_one(".itemCard__title, .title, .g-title, a")
-                    title = title_elem.get_text(strip=True) if title_elem else ""
-                    if not title:
+                    title_elem = item.select_one(".itemCard__title, .title, .g-title, a") if hasattr(item, "select_one") else None
+                    title = title_elem.get_text(strip=True) if title_elem else (item.get_text(strip=True) if hasattr(item, "get_text") else "")
+                    if not title or len(title) < 3:
                         continue
 
-                    link_elem = item.select_one("a")
-                    item_url = link_elem.get("href", "") if link_elem else source["url"]
+                    link_elem = item.select_one("a") if hasattr(item, "select_one") else None
+                    item_url = link_elem.get("href", "") if link_elem else (item.get("href", "") if hasattr(item, "get") else source["url"])
                     if item_url.startswith("/"):
                         item_url = "https://buyee.jp" + item_url
 
-                    item_id = item.get("data-item-id", item_url)
+                    item_id = item.get("data-item-id", item_url) if hasattr(item, "get") else item_url
                     if item_id in seen_ids:
                         continue
 
-                    price_elem = item.select_one(".itemCard__price, .price, .g-price")
+                    price_elem = item.select_one(".itemCard__price, .price, .g-price") if hasattr(item, "select_one") else None
                     price_text = price_elem.get_text(strip=True) if price_elem else "0"
                     price_clean = "".join(filter(str.isdigit, price_text))
                     price_jpy = int(price_clean) if price_clean else 0
                     if price_jpy == 0:
-                        continue
+                        # Fallback search for digits in parent text if structured price tag missed
+                        digits = "".join(filter(str.isdigit, title))
+                        # Skip if no reasonable price found
+                        if len(digits) < 3:
+                            continue
 
                     score, reason, condition, model = validate_and_score(title, price_jpy)
                     price_gbp = round(price_jpy * 0.0052, 2)

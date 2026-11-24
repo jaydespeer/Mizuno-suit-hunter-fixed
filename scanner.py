@@ -4,7 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 from playwright.sync_api import sync_playwright
-from playwright_stealth import stealth
 
 STATE_FILE = "state.json"
 REPORT_FILE = "latest_report.json"
@@ -210,10 +209,15 @@ def run_scanner():
             locale="en-US",
             timezone_id="Europe/London",
             java_script_enabled=True,
+            extra_http_headers={
+                "Accept-Language": "en-US,en;q=0.9",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+            }
         )
         
+        # Hide navigator.webdriver flag natively
+        context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
         page = context.new_page()
-        stealth(page)
 
         for source in MARKETPLACES:
             report["marketplaces_checked"] += 1

@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 from playwright.sync_api import sync_playwright
+from playwright_stealth import stealth_sync
 
 STATE_FILE = "state.json"
 REPORT_FILE = "latest_report.json"
@@ -209,14 +210,10 @@ def run_scanner():
             locale="en-US",
             timezone_id="Europe/London",
             java_script_enabled=True,
-            extra_http_headers={
-                "Accept-Language": "en-US,en;q=0.9",
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-            }
         )
         
-        context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
         page = context.new_page()
+        stealth_sync(page)
 
         for source in MARKETPLACES:
             report["marketplaces_checked"] += 1
@@ -231,7 +228,6 @@ def run_scanner():
                 html = page.content()
                 soup = BeautifulSoup(html, "html.parser")
                 
-                # Robust multi-fallback selector to capture listings across Buyee layouts
                 items = soup.select("li[data-item-id], [class*='itemCard'], [class*='searchItem'], [class*='Card'], div.g-thumbnail")
                 if not items:
                     items = soup.select("a[href*='/item/'], a[href*='/mercari/'], a[href*='/yahoo/'], a[href*='/rakuma/']")
@@ -262,9 +258,7 @@ def run_scanner():
                     price_clean = "".join(filter(str.isdigit, price_text))
                     price_jpy = int(price_clean) if price_clean else 0
                     if price_jpy == 0:
-                        # Fallback search for digits in parent text if structured price tag missed
                         digits = "".join(filter(str.isdigit, title))
-                        # Skip if no reasonable price found
                         if len(digits) < 3:
                             continue
 

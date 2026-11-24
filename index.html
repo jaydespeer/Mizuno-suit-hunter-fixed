@@ -43,20 +43,20 @@
                 document.getElementById('matches').innerText = data.qualifying_matches;
 
                 if (data.best_overall) {
-                    document.getElementById('best-overall').innerHTML = `<span class="badge">BEST OVERALL</span><h3><a href="${data.best_overall.url}" target="_blank">${data.best_overall.title}</a></h3><p>¥${data.best_overall.price_jpy.toLocaleString()} (~£${data.best_overall.price_gbp}) • ${data.best_overall.marketplace} • Score: ${data.best_overall.score}</p>`;
+                    document.getElementById('best-overall').innerHTML = '<span class="badge">BEST OVERALL</span><h3><a href="' + data.best_overall.url + '" target="_blank">' + data.best_overall.title + '</a></h3><p>¥' + data.best_overall.price_jpy.toLocaleString() + ' (~£' + data.best_overall.price_gbp + ') • ' + data.best_overall.marketplace + ' • Score: ' + data.best_overall.score + '</p>';
                 } else {
                     document.getElementById('best-overall').innerHTML = '<p>No qualifying best match found yet.</p>';
                 }
 
                 if (data.cheapest_verified) {
-                    document.getElementById('cheapest').innerHTML = `<span class="badge" style="background:#38a169;">CHEAPEST VERIFIED</span><h3><a href="${data.cheapest_verified.url}" target="_blank">${data.cheapest_verified.title}</a></h3><p>¥${data.cheapest_verified.price_jpy.toLocaleString()} (~£${data.cheapest_verified.price_gbp}) • ${data.cheapest_verified.marketplace} • Score: ${data.cheapest_verified.score}</p>`;
+                    document.getElementById('cheapest').innerHTML = '<span class="badge" style="background:#38a169;">CHEAPEST VERIFIED</span><h3><a href="' + data.cheapest_verified.url + '" target="_blank">' + data.cheapest_verified.title + '</a></h3><p>¥' + data.cheapest_verified.price_jpy.toLocaleString() + ' (~£' + data.cheapest_verified.price_gbp + ') • ' + data.cheapest_verified.marketplace + ' • Score: ' + data.cheapest_verified.score + '</p>';
                 } else {
                     document.getElementById('cheapest').innerHTML = '<p>No qualifying cheapest match found yet.</p>';
                 }
 
                 const rev = document.getElementById('review');
                 if (data.manual_review && data.manual_review.length) {
-                    rev.innerHTML = data.manual_review.slice(0, 10).map(i => `<div class="card"><a href="${i.url}" target="_blank">${i.title}</a><p style="font-size:13px;color:#718096;">¥${i.price_jpy.toLocaleString()} • ${i.reason}</p></div>`).join('');
+                    rev.innerHTML = data.manual_review.slice(0, 10).map(i => '<div class="card"><a href="' + i.url + '" target="_blank">' + i.title + '</a><p style="font-size:13px;color:#718096;">¥' + i.price_jpy.toLocaleString() + ' • ' + i.reason + '</p></div>').join('');
                 } else {
                     rev.innerHTML = '<div class="card"><p>No items awaiting manual review.</p></div>';
                 }

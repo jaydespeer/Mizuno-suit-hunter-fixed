@@ -3,15 +3,16 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
+from playwright.sync_api import sync_playwright
 
 STATE_FILE = "state.json"
 REPORT_FILE = "latest_report.json"
 DASHBOARD_FILE = "index.html"
 
 MARKETPLACES = [
-    {"name": "Buyee Mercari", "url": "https://buyee.jp/mercari/search?keyword=Mizuno+GX+Sonic+M"},
-    {"name": "Buyee Yahoo Auctions", "url": "https://buyee.jp/yahoo/search?query=Mizuno+GX+Sonic+M"},
-    {"name": "Buyee Rakuma", "url": "https://buyee.jp/rakuma/search?keyword=Mizuno+GX+Sonic+M"}
+    {"name": "Buyee Mercari", "url": "https://buyee.jp/mercari/search?keyword=Mizuno%20GX%20Sonic%20M"},
+    {"name": "Buyee Yahoo Auctions", "url": "https://buyee.jp/item/search/query/Mizuno%20GX%20Sonic%20M"},
+    {"name": "Buyee Rakuma", "url": "https://buyee.jp/rakuma/search?keyword=Mizuno%20GX%20Sonic%20M"}
 ]
 
 EXCLUDED_TERMS = [
@@ -185,69 +186,81 @@ def run_scanner():
         "errors": []
     }
 
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
     all_valid_items = []
 
-    for source in MARKETPLACES:
-        report["marketplaces_checked"] += 1
-        try:
-            resp = requests.get(source["url"], headers=headers, timeout=15)
-            if resp.status_code != 200:
-                report["errors"].append(f"{source['name']} returned HTTP {resp.status_code}")
-                continue
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            locale="en-US"
+        )
+        page = context.new_page()
 
-            soup = BeautifulSoup(resp.text, "html.parser")
-            items = soup.select(".itemCard, .searchItemBox, li[data-item-id]")
+        for source in MARKETPLACES:
+            report["marketplaces_checked"] += 1
+            try:
+                page.goto(source["url"], wait_until="domcontentloaded", timeout=30000)
+                page.wait_for_timeout(5000)
+                html = page.content()
 
-            for item in items[:20]:
-                report["listings_inspected"] += 1
+                soup = BeautifulSoup(html, "html.parser")
+                items = soup.select(".itemCard, .searchItemBox, li[data-item-id], .g-thumbnail")
 
-                title_elem = item.select_one(".itemCard__title, .title, a")
-                title = title_elem.get_text(strip=True) if title_elem else ""
-                if not title:
+                if not items:
+                    report["errors"].append(f"{source['name']}: Loaded page, but 0 item cards matched (Title: {page.title()})")
                     continue
 
-                link_elem = item.select_one("a")
-                item_url = link_elem.get("href", "") if link_elem else source["url"]
-                if item_url.startswith("/"):
-                    item_url = "https://buyee.jp" + item_url
+                for item in items[:25]:
+                    report["listings_inspected"] += 1
 
-                item_id = item.get("data-item-id", item_url)
-                if item_id in seen_ids:
-                    continue
+                    title_elem = item.select_one(".itemCard__title, .title, .g-title, a")
+                    title = title_elem.get_text(strip=True) if title_elem else ""
+                    if not title:
+                        continue
 
-                price_elem = item.select_one(".itemCard__price, .price")
-                price_text = price_elem.get_text(strip=True) if price_elem else "0"
-                price_clean = "".join(filter(str.isdigit, price_text))
-                price_jpy = int(price_clean) if price_clean else 0
-                if price_jpy == 0:
-                    continue
+                    link_elem = item.select_one("a")
+                    item_url = link_elem.get("href", "") if link_elem else source["url"]
+                    if item_url.startswith("/"):
+                        item_url = "https://buyee.jp" + item_url
 
-                score, reason, condition, model = validate_and_score(title, price_jpy)
-                price_gbp = round(price_jpy * 0.0052, 2)
+                    item_id = item.get("data-item-id", item_url)
+                    if item_id in seen_ids:
+                        continue
 
-                item_data = {
-                    "id": item_id,
-                    "title": title,
-                    "model": model,
-                    "price_jpy": price_jpy,
-                    "price_gbp": price_gbp,
-                    "condition": condition,
-                    "marketplace": source["name"],
-                    "url": item_url,
-                    "score": score,
-                    "reason": reason
-                }
+                    price_elem = item.select_one(".itemCard__price, .price, .g-price")
+                    price_text = price_elem.get_text(strip=True) if price_elem else "0"
+                    price_clean = "".join(filter(str.isdigit, price_text))
+                    price_jpy = int(price_clean) if price_clean else 0
+                    if price_jpy == 0:
+                        continue
 
-                seen_ids.add(item_id)
+                    score, reason, condition, model = validate_and_score(title, price_jpy)
+                    price_gbp = round(price_jpy * 0.0052, 2)
 
-                if score >= 85:
-                    all_valid_items.append(item_data)
-                else:
-                    report["manual_review"].append(item_data)
+                    item_data = {
+                        "id": item_id,
+                        "title": title,
+                        "model": model,
+                        "price_jpy": price_jpy,
+                        "price_gbp": price_gbp,
+                        "condition": condition,
+                        "marketplace": source["name"],
+                        "url": item_url,
+                        "score": score,
+                        "reason": reason
+                    }
 
-        except Exception as e:
-            report["errors"].append(f"{source['name']} error: {str(e)}")
+                    seen_ids.add(item_id)
+
+                    if score >= 85:
+                        all_valid_items.append(item_data)
+                    else:
+                        report["manual_review"].append(item_data)
+
+            except Exception as e:
+                report["errors"].append(f"{source['name']} error: {str(e)}")
+
+        browser.close()
 
     if all_valid_items:
         all_valid_items.sort(key=lambda x: (x["score"], -x["price_jpy"]), reverse=True)

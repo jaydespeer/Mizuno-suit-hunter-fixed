@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 from playwright.sync_api import sync_playwright
-from playwright_stealth import stealth_sync
+from playwright_stealth import stealth
 
 STATE_FILE = "state.json"
 REPORT_FILE = "latest_report.json"
@@ -213,7 +213,7 @@ def run_scanner():
         )
         
         page = context.new_page()
-        stealth_sync(page)
+        stealth(page)
 
         for source in MARKETPLACES:
             report["marketplaces_checked"] += 1

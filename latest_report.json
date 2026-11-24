@@ -1,15 +1,27 @@
 {
-  "last_successful_scan": "2026-11-24T21:38:05.248292+00:00",
+  "last_successful_scan": "2026-11-24T21:43:07.163200+00:00",
   "marketplaces_checked": 3,
-  "listings_inspected": 0,
+  "listings_inspected": 25,
   "qualifying_matches": 0,
   "best_overall": null,
   "cheapest_verified": null,
-  "manual_review": [],
+  "manual_review": [
+    {
+      "id": "https://buyee.jp/item/jdirectitems/auction/t1242248715?conversionType=jdirectitems_auction_DirectSearch",
+      "title": "12% OFF",
+      "model": "Unknown",
+      "price_jpy": 16000,
+      "price_gbp": 83.2,
+      "condition": "Uncertain",
+      "marketplace": "Buyee Yahoo Auctions",
+      "url": "https://buyee.jp/item/jdirectitems/auction/t1242248715?conversionType=jdirectitems_auction_DirectSearch",
+      "score": 0,
+      "reason": "Missing required term: 'mizuno'"
+    }
+  ],
   "all_matches": [],
   "errors": [
-    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
-    "Buyee Yahoo Auctions: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
-    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: 403 Forbidden)"
+    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: Mizuno GX Sonic M | Shop at Mercari from Japan! | Buyee)",
+    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: Mizuno GX Sonic M | Shop at Rakuma from Japan! | Buyee)"
   ]
 }

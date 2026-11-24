@@ -222,9 +222,18 @@ def run_scanner():
             report["marketplaces_checked"] += 1
             try:
                 page.goto(source["url"], wait_until="domcontentloaded", timeout=30000)
-                page.wait_for_timeout(5000)
-                html = page.content()
+                
+                # Mimic human actions to bypass WAF / bot-protection walls
+                page.wait_for_timeout(3000)
+                page.mouse.wheel(0, 500)
+                page.wait_for_timeout(2000)
 
+                try:
+                    page.wait_for_selector(".itemCard, .searchItemBox, li[data-item-id], .g-thumbnail", timeout=10000)
+                except Exception:
+                    pass
+
+                html = page.content()
                 soup = BeautifulSoup(html, "html.parser")
                 items = soup.select(".itemCard, .searchItemBox, li[data-item-id], .g-thumbnail")
 

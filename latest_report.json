@@ -1,123 +1,15 @@
 {
-  "last_successful_scan": "2026-11-25T06:44:11.007141+00:00",
+  "last_successful_scan": "2026-11-25T08:17:24.306071+00:00",
   "marketplaces_checked": 3,
-  "listings_inspected": 75,
-  "qualifying_matches": 2,
-  "best_overall": {
-    "id": "https://buyee.jp/paypayfleamarket/item/z731485382?conversionType=jdirectitems_auction_DirectSearch",
-    "title": "[Brand New] MIZUNO GX・SONIC II MR Racing Swimsuit, Size M, High-Speed ​​Swimsuit, Race Swimsuit, Woven Fabric, Retail Price: ¥36,300",
-    "model": "GX Sonic (Unspecified Generation)",
-    "price_jpy": 16500,
-    "price_gbp": 85.8,
-    "condition": "Brand New / Unused",
-    "marketplace": "Buyee Yahoo Auctions",
-    "url": "https://buyee.jp/paypayfleamarket/item/z731485382?conversionType=jdirectitems_auction_DirectSearch",
-    "score": 95,
-    "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-    "badge": "BEST OVERALL"
-  },
-  "cheapest_verified": {
-    "id": "https://buyee.jp/mercari/item/m99024982549?conversionType=Mercari_DirectSearch",
-    "title": "Mizuno GX SONIC NEO AG M High-Speed ​​Swimsuit (FINA Approved)9,000 YEN(US$59.31)",
-    "model": "GX Sonic NEO",
-    "price_jpy": 9000,
-    "price_gbp": 46.8,
-    "condition": "New / Unused (Inferred)",
-    "marketplace": "Buyee Mercari",
-    "url": "https://buyee.jp/mercari/item/m99024982549?conversionType=Mercari_DirectSearch",
-    "score": 85,
-    "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-    "badge": "CHEAPEST VERIFIED"
-  },
-  "manual_review": [
-    {
-      "id": "https://buyee.jp/mercari/item/m78393442137?conversionType=Mercari_DirectSearch",
-      "title": "Brand new Mizuno competitive swimwear, WA approved model, GX・SONIC DUAL S5,999 YEN(US$39.54)",
-      "model": "GX Sonic",
-      "price_jpy": 5999,
-      "price_gbp": 31.19,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m78393442137?conversionType=Mercari_DirectSearch",
-      "score": 0,
-      "reason": "Missing clear Size M evidence"
-    },
-    {
-      "id": "https://buyee.jp/mercari/item/m29126771922?conversionType=Mercari_DirectSearch",
-      "title": "15% OFF[New and unused] MIZUNO GX・SONIC ROYAL PW M size48,000 YEN(US$316.32)",
-      "model": "Unknown",
-      "price_jpy": 48000,
-      "price_gbp": 249.6,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m29126771922?conversionType=Mercari_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'used'"
-    },
-    {
-      "id": "https://buyee.jp/mercari/item/m26221482423?conversionType=Mercari_DirectSearch",
-      "title": "Mizuno Men's GX・SONIC STREAM Half Spats (Size M)3,000 YEN(US$19.77)",
-      "model": "Unknown",
-      "price_jpy": 3000,
-      "price_gbp": 15.6,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m26221482423?conversionType=Mercari_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'stream'"
-    },
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z731620390?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "Mizuno GX SONIC ROYAL PW Half Spats N2MBD00184 Size M",
-      "model": "GX Sonic (Unspecified Generation)",
-      "price_jpy": 48000,
-      "price_gbp": 249.6,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z731620390?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 0,
-      "reason": "Above budget threshold: ¥48000"
-    },
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z691245556?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "Mizuno GX SONIC STREAM High-Top, Size M, Blue x Turquoise, Brand New",
-      "model": "Unknown",
-      "price_jpy": 15400,
-      "price_gbp": 80.08,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z691245556?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'stream'"
-    }
-  ],
-  "all_matches": [
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z731485382?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "[Brand New] MIZUNO GX・SONIC II MR Racing Swimsuit, Size M, High-Speed ​​Swimsuit, Race Swimsuit, Woven Fabric, Retail Price: ¥36,300",
-      "model": "GX Sonic (Unspecified Generation)",
-      "price_jpy": 16500,
-      "price_gbp": 85.8,
-      "condition": "Brand New / Unused",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z731485382?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 95,
-      "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-      "badge": "BEST OVERALL"
-    },
-    {
-      "id": "https://buyee.jp/mercari/item/m99024982549?conversionType=Mercari_DirectSearch",
-      "title": "Mizuno GX SONIC NEO AG M High-Speed ​​Swimsuit (FINA Approved)9,000 YEN(US$59.31)",
-      "model": "GX Sonic NEO",
-      "price_jpy": 9000,
-      "price_gbp": 46.8,
-      "condition": "New / Unused (Inferred)",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m99024982549?conversionType=Mercari_DirectSearch",
-      "score": 85,
-      "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-      "badge": "CHEAPEST VERIFIED"
-    }
-  ],
-  "errors": []
+  "listings_inspected": 0,
+  "qualifying_matches": 0,
+  "best_overall": null,
+  "cheapest_verified": null,
+  "manual_review": [],
+  "all_matches": [],
+  "errors": [
+    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Yahoo Auctions: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: 403 Forbidden)"
+  ]
 }

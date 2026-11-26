@@ -1,60 +1,15 @@
 {
-  "last_successful_scan": "2026-11-26T01:00:05.024506+00:00",
+  "last_successful_scan": "2026-11-26T02:21:15.512536+00:00",
   "marketplaces_checked": 3,
-  "listings_inspected": 75,
+  "listings_inspected": 0,
   "qualifying_matches": 0,
   "best_overall": null,
   "cheapest_verified": null,
-  "manual_review": [
-    {
-      "id": "https://buyee.jp/mercari/item/m54793240868?conversionType=Mercari_DirectSearch",
-      "title": "MIZUNO GX-SONIC III competitive swimwear7,500 YEN(US$49.43)",
-      "model": "GX Sonic",
-      "price_jpy": 7500,
-      "price_gbp": 39.0,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m54793240868?conversionType=Mercari_DirectSearch",
-      "score": 0,
-      "reason": "Missing clear Size M evidence"
-    },
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z607058534?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "MIZUNO GX-SONIC Women's Competitive Swimsuit, Size M, Blue/Orange",
-      "model": "Unknown",
-      "price_jpy": 6000,
-      "price_gbp": 31.2,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z607058534?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'women'"
-    },
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z656829652?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "Brand new MIZUNO racing swimsuit GX・SONIC STREAM WA approved.",
-      "model": "Unknown",
-      "price_jpy": 7000,
-      "price_gbp": 36.4,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z656829652?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'stream'"
-    },
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z695832262?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "[Brand New] MIZUNO GX・SONIC Women's M Competitive Swimsuit, FINA Approved",
-      "model": "Unknown",
-      "price_jpy": 8000,
-      "price_gbp": 41.6,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z695832262?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'women'"
-    }
-  ],
+  "manual_review": [],
   "all_matches": [],
-  "errors": []
+  "errors": [
+    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Yahoo Auctions: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: 403 Forbidden)"
+  ]
 }

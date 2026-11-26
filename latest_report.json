@@ -1,15 +1,60 @@
 {
-  "last_successful_scan": "2026-11-26T19:58:41.480163+00:00",
+  "last_successful_scan": "2026-11-26T20:55:31.618763+00:00",
   "marketplaces_checked": 3,
-  "listings_inspected": 0,
+  "listings_inspected": 75,
   "qualifying_matches": 0,
   "best_overall": null,
   "cheapest_verified": null,
-  "manual_review": [],
+  "manual_review": [
+    {
+      "id": "https://buyee.jp/mercari/item/m96598000835?conversionType=Mercari_DirectSearch",
+      "title": "12% OFFMizuno Women's Competitive Swimsuit GX SONIC V MR Size M12,000 YEN(US$79.08)",
+      "model": "Unknown",
+      "price_jpy": 12000,
+      "price_gbp": 62.4,
+      "condition": "Uncertain",
+      "marketplace": "Buyee Mercari",
+      "url": "https://buyee.jp/mercari/item/m96598000835?conversionType=Mercari_DirectSearch",
+      "score": 0,
+      "reason": "Excluded term found: 'women'"
+    },
+    {
+      "id": "https://buyee.jp/mercari/item/2JVTR9ygShMQuGKopSZouM?conversionType=Mercari_DirectSearch",
+      "title": "Brand New [Mizuno] Swimwear, Competition Swimsuit, GX・SONIC STREAM Half Suit (Masters Back), Women's, Navy/Turquoise, Size M8,566 YEN(US$56.45)",
+      "model": "Unknown",
+      "price_jpy": 8566,
+      "price_gbp": 44.54,
+      "condition": "Uncertain",
+      "marketplace": "Buyee Mercari",
+      "url": "https://buyee.jp/mercari/item/2JVTR9ygShMQuGKopSZouM?conversionType=Mercari_DirectSearch",
+      "score": 0,
+      "reason": "Excluded term found: 'stream'"
+    },
+    {
+      "id": "https://buyee.jp/mercari/item/m47878306918?conversionType=Mercari_DirectSearch",
+      "title": "15% OFFPinko-sama, high-speed swimsuit, 2 pieces, GX SONIC LZR FASTSKIN, size M.60,000 YEN(US$395.40)",
+      "model": "Unknown",
+      "price_jpy": 60000,
+      "price_gbp": 312.0,
+      "condition": "Uncertain",
+      "marketplace": "Buyee Mercari",
+      "url": "https://buyee.jp/mercari/item/m47878306918?conversionType=Mercari_DirectSearch",
+      "score": 0,
+      "reason": "Missing required term: 'mizuno'"
+    },
+    {
+      "id": "https://buyee.jp/item/jdirectitems/auction/q1249686164?conversionType=jdirectitems_auction_DirectSearch",
+      "title": "★Used once MIZUNO Mirror Goggles WA Approved GX・SONIC EYE G Cushion N3JEA321 (S420)★",
+      "model": "Unknown",
+      "price_jpy": 2000,
+      "price_gbp": 10.4,
+      "condition": "Uncertain",
+      "marketplace": "Buyee Yahoo Auctions",
+      "url": "https://buyee.jp/item/jdirectitems/auction/q1249686164?conversionType=jdirectitems_auction_DirectSearch",
+      "score": 0,
+      "reason": "Excluded term found: 'used'"
+    }
+  ],
   "all_matches": [],
-  "errors": [
-    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
-    "Buyee Yahoo Auctions: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
-    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: 403 Forbidden)"
-  ]
+  "errors": []
 }

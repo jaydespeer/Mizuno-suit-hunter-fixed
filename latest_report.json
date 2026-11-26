@@ -1,24 +1,15 @@
 {
-  "last_successful_scan": "2026-11-26T10:55:13.133769+00:00",
+  "last_successful_scan": "2026-11-26T11:55:08.451387+00:00",
   "marketplaces_checked": 3,
-  "listings_inspected": 75,
+  "listings_inspected": 0,
   "qualifying_matches": 0,
   "best_overall": null,
   "cheapest_verified": null,
-  "manual_review": [
-    {
-      "id": "https://buyee.jp/mercari/item/m66340557853?conversionType=Mercari_DirectSearch",
-      "title": "MIZUNO (GX・SONIC IV MR) Women's Competitive Swimsuit, Size M5,650 YEN(US$37.24)",
-      "model": "Unknown",
-      "price_jpy": 5650,
-      "price_gbp": 29.38,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m66340557853?conversionType=Mercari_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'women'"
-    }
-  ],
+  "manual_review": [],
   "all_matches": [],
-  "errors": []
+  "errors": [
+    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Yahoo Auctions: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: 403 Forbidden)"
+  ]
 }

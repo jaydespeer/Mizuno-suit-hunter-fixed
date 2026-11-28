@@ -1,86 +1,15 @@
 {
-  "last_successful_scan": "2026-11-28T14:44:33.645548+00:00",
+  "last_successful_scan": "2026-11-28T15:30:30.763921+00:00",
   "marketplaces_checked": 3,
-  "listings_inspected": 75,
-  "qualifying_matches": 3,
-  "best_overall": {
-    "id": "https://buyee.jp/mercari/item/m55552753475?conversionType=Mercari_DirectSearch",
-    "title": "12% OFFOn sale now! Mizuno GX SONIC NEO SL competitive swimsuit, size M.10,000 YEN(US$65.80)",
-    "model": "GX Sonic NEO",
-    "price_jpy": 10000,
-    "price_gbp": 52.0,
-    "condition": "New / Unused (Inferred)",
-    "marketplace": "Buyee Mercari",
-    "url": "https://buyee.jp/mercari/item/m55552753475?conversionType=Mercari_DirectSearch",
-    "score": 85,
-    "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-    "badge": "BEST OVERALL"
-  },
-  "cheapest_verified": {
-    "id": "https://buyee.jp/mercari/item/m55552753475?conversionType=Mercari_DirectSearch",
-    "title": "12% OFFOn sale now! Mizuno GX SONIC NEO SL competitive swimsuit, size M.10,000 YEN(US$65.80)",
-    "model": "GX Sonic NEO",
-    "price_jpy": 10000,
-    "price_gbp": 52.0,
-    "condition": "New / Unused (Inferred)",
-    "marketplace": "Buyee Mercari",
-    "url": "https://buyee.jp/mercari/item/m55552753475?conversionType=Mercari_DirectSearch",
-    "score": 85,
-    "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-    "badge": "BEST OVERALL"
-  },
-  "manual_review": [
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z734304824?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "MIZUNO GX・SONIC STREAM Size M ● Mizuno Sonic Stream V-Pants, Competitive Swimwear",
-      "model": "Unknown",
-      "price_jpy": 4000,
-      "price_gbp": 20.8,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z734304824?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 0,
-      "reason": "Excluded term found: 'stream'"
-    }
-  ],
-  "all_matches": [
-    {
-      "id": "https://buyee.jp/mercari/item/m55552753475?conversionType=Mercari_DirectSearch",
-      "title": "12% OFFOn sale now! Mizuno GX SONIC NEO SL competitive swimsuit, size M.10,000 YEN(US$65.80)",
-      "model": "GX Sonic NEO",
-      "price_jpy": 10000,
-      "price_gbp": 52.0,
-      "condition": "New / Unused (Inferred)",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m55552753475?conversionType=Mercari_DirectSearch",
-      "score": 85,
-      "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-      "badge": "BEST OVERALL"
-    },
-    {
-      "id": "https://buyee.jp/mercari/item/m43757034455?conversionType=Mercari_DirectSearch",
-      "title": "12% OFFMizuno GX SONIC IV ST High-Speed ​​Competitive Swimsuit, Size M12,000 YEN(US$78.96)",
-      "model": "GX Sonic IV",
-      "price_jpy": 12000,
-      "price_gbp": 62.4,
-      "condition": "New / Unused (Inferred)",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m43757034455?conversionType=Mercari_DirectSearch",
-      "score": 85,
-      "reason": "Verified Men's Size M Mizuno GX Sonic racing suit."
-    },
-    {
-      "id": "https://buyee.jp/mercari/item/m46530900055?conversionType=Mercari_DirectSearch",
-      "title": "12% OFFMizuno GX3 GX SONIC III M size competitive swimsuit, high-speed swimsuit, FINA approved.28,000 YEN(US$184.24)",
-      "model": "GX Sonic III",
-      "price_jpy": 28000,
-      "price_gbp": 145.6,
-      "condition": "New / Unused (Inferred)",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m46530900055?conversionType=Mercari_DirectSearch",
-      "score": 85,
-      "reason": "Verified Men's Size M Mizuno GX Sonic racing suit."
-    }
-  ],
-  "errors": []
+  "listings_inspected": 0,
+  "qualifying_matches": 0,
+  "best_overall": null,
+  "cheapest_verified": null,
+  "manual_review": [],
+  "all_matches": [],
+  "errors": [
+    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Yahoo Auctions: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: 403 Forbidden)"
+  ]
 }

@@ -1,86 +1,15 @@
 {
-  "last_successful_scan": "2026-11-28T03:06:11.297423+00:00",
+  "last_successful_scan": "2026-11-28T04:10:46.741766+00:00",
   "marketplaces_checked": 3,
-  "listings_inspected": 75,
-  "qualifying_matches": 1,
-  "best_overall": {
-    "id": "https://buyee.jp/mercari/item/m71366005791?conversionType=Mercari_DirectSearch",
-    "title": "15% OFFMIZUNO Competitive Swimming Half-Spats Swimsuit, Size M, GX-SONIC40,000 YEN(US$263.20)",
-    "model": "GX Sonic (Unspecified Generation)",
-    "price_jpy": 40000,
-    "price_gbp": 208.0,
-    "condition": "New / Unused (Inferred)",
-    "marketplace": "Buyee Mercari",
-    "url": "https://buyee.jp/mercari/item/m71366005791?conversionType=Mercari_DirectSearch",
-    "score": 100,
-    "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-    "badge": "BEST OVERALL"
-  },
-  "cheapest_verified": {
-    "id": "https://buyee.jp/mercari/item/m71366005791?conversionType=Mercari_DirectSearch",
-    "title": "15% OFFMIZUNO Competitive Swimming Half-Spats Swimsuit, Size M, GX-SONIC40,000 YEN(US$263.20)",
-    "model": "GX Sonic (Unspecified Generation)",
-    "price_jpy": 40000,
-    "price_gbp": 208.0,
-    "condition": "New / Unused (Inferred)",
-    "marketplace": "Buyee Mercari",
-    "url": "https://buyee.jp/mercari/item/m71366005791?conversionType=Mercari_DirectSearch",
-    "score": 100,
-    "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-    "badge": "BEST OVERALL"
-  },
-  "manual_review": [
-    {
-      "id": "https://buyee.jp/mercari/item/m90389907177?conversionType=Mercari_DirectSearch",
-      "title": "15% OFFBrand new, size M, Mizuno GX-Sonic Royal PW49,800 YEN(US$327.69)",
-      "model": "GX Sonic (Unspecified Generation)",
-      "price_jpy": 49800,
-      "price_gbp": 258.96,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m90389907177?conversionType=Mercari_DirectSearch",
-      "score": 0,
-      "reason": "Above budget threshold: ¥49800"
-    },
-    {
-      "id": "https://buyee.jp/mercari/item/m28185960648?conversionType=Mercari_DirectSearch",
-      "title": "MIZUNO GX-SONIC III competitive swimwear2,899 YEN(US$19.08)",
-      "model": "GX Sonic",
-      "price_jpy": 2899,
-      "price_gbp": 15.07,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m28185960648?conversionType=Mercari_DirectSearch",
-      "score": 0,
-      "reason": "Missing clear Size M evidence"
-    },
-    {
-      "id": "https://buyee.jp/paypayfleamarket/item/z733859616?conversionType=jdirectitems_auction_DirectSearch",
-      "title": "Brand new, size M, Mizuno GX-Sonic Royal PW",
-      "model": "GX Sonic (Unspecified Generation)",
-      "price_jpy": 49800,
-      "price_gbp": 258.96,
-      "condition": "Uncertain",
-      "marketplace": "Buyee Yahoo Auctions",
-      "url": "https://buyee.jp/paypayfleamarket/item/z733859616?conversionType=jdirectitems_auction_DirectSearch",
-      "score": 0,
-      "reason": "Above budget threshold: ¥49800"
-    }
-  ],
-  "all_matches": [
-    {
-      "id": "https://buyee.jp/mercari/item/m71366005791?conversionType=Mercari_DirectSearch",
-      "title": "15% OFFMIZUNO Competitive Swimming Half-Spats Swimsuit, Size M, GX-SONIC40,000 YEN(US$263.20)",
-      "model": "GX Sonic (Unspecified Generation)",
-      "price_jpy": 40000,
-      "price_gbp": 208.0,
-      "condition": "New / Unused (Inferred)",
-      "marketplace": "Buyee Mercari",
-      "url": "https://buyee.jp/mercari/item/m71366005791?conversionType=Mercari_DirectSearch",
-      "score": 100,
-      "reason": "Verified Men's Size M Mizuno GX Sonic racing suit.",
-      "badge": "BEST OVERALL"
-    }
-  ],
-  "errors": []
+  "listings_inspected": 0,
+  "qualifying_matches": 0,
+  "best_overall": null,
+  "cheapest_verified": null,
+  "manual_review": [],
+  "all_matches": [],
+  "errors": [
+    "Buyee Mercari: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Yahoo Auctions: Loaded page, but 0 item cards matched (Title: 403 Forbidden)",
+    "Buyee Rakuma: Loaded page, but 0 item cards matched (Title: 403 Forbidden)"
+  ]
 }
